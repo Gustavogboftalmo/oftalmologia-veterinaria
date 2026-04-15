@@ -311,6 +311,283 @@
       <div class="field"><label>Pet tem acompanhamento clínico regular?</label>
         <div class="options-grid">
           <div class="option-item"><input type="radio" name="acomp" id="acomSim" value="Sim"><label for="acomSim">Sim</label></div>
+          <div class="option-item"><input type="radio" name="acomp" id="acomNao" value="Não"><label for="    .container { max-width: 640px; margin: 0 auto; padding: 0 16px 60px; }
+
+    /* SECTION */
+    .section { margin-top: 28px; }
+    .section-label { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .section-num { font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--laranja); line-height: 1; flex-shrink: 0; width: 28px; }
+    .section-title { font-size: 13px; font-weight: 600; color: var(--cinza-escuro); text-transform: uppercase; letter-spacing: 1.5px; }
+    .section-divider { flex: 1; height: 1px; background: var(--borda); }
+
+    /* CARD */
+    .card { background: white; border-radius: 10px; padding: 20px; border: 1px solid var(--borda); display: flex; flex-direction: column; gap: 16px; }
+    .field { display: flex; flex-direction: column; gap: 6px; }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+    label { font-size: 11px; font-weight: 600; color: var(--cinza-medio); text-transform: uppercase; letter-spacing: 1px; }
+
+    input[type="text"], input[type="tel"], input[type="email"], select, textarea {
+      width: 100%; padding: 11px 14px; border: 1.5px solid var(--borda); border-radius: 8px;
+      font-family: 'Inter', sans-serif; font-size: 15px; color: var(--texto); background: var(--fundo);
+      transition: border-color 0.2s, box-shadow 0.2s; -webkit-appearance: none;
+    }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: var(--laranja); box-shadow: 0 0 0 3px rgba(200,90,0,0.1); background: white; }
+    textarea { resize: vertical; min-height: 80px; line-height: 1.5; }
+    select { cursor: pointer; }
+
+    /* OPTIONS */
+    .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .options-grid.three { grid-template-columns: 1fr 1fr 1fr; }
+    .option-item { position: relative; }
+    .option-item input { position: absolute; opacity: 0; width: 0; height: 0; }
+    .option-item label { display: flex; align-items: center; gap: 8px; padding: 10px 12px; border: 1.5px solid var(--borda); border-radius: 8px; cursor: pointer; font-size: 13px; font-weight: 500; color: var(--cinza-medio); text-transform: none; letter-spacing: 0; background: var(--fundo); transition: all 0.15s; }
+    .option-item label::before { content: ''; width: 15px; height: 15px; border: 2px solid var(--borda); border-radius: 3px; flex-shrink: 0; transition: all 0.15s; background: white; }
+    .option-item input[type="radio"] + label::before { border-radius: 50%; }
+    .option-item input:checked + label { border-color: var(--laranja); background: rgba(200,90,0,0.05); color: var(--preto); }
+    .option-item input:checked + label::before { background: var(--laranja); border-color: var(--laranja); }
+
+    /* SCALE */
+    .scale-wrap { display: flex; gap: 6px; }
+    .scale-btn { flex: 1; padding: 10px 4px; border: 1.5px solid var(--borda); border-radius: 8px; background: var(--fundo); cursor: pointer; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600; color: var(--cinza-claro); transition: all 0.15s; }
+    .scale-btn:hover { border-color: var(--laranja); color: var(--laranja); }
+    .scale-btn.selected { background: var(--laranja); border-color: var(--laranja); color: white; }
+    .scale-labels { display: flex; justify-content: space-between; margin-top: 4px; }
+    .scale-labels span { font-size: 11px; color: var(--cinza-claro); }
+
+    /* BANNER INFORMAÇÕES COMPLEMENTARES */
+    .banner-complementar {
+      margin-top: 32px;
+      background: #fff8f0;
+      border-left: 4px solid var(--laranja);
+      border-radius: 8px;
+      padding: 16px 18px;
+    }
+    .banner-complementar strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--laranja);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+    .banner-complementar p {
+      font-size: 13px;
+      color: var(--cinza-medio);
+      line-height: 1.5;
+    }
+
+    .hint { font-size: 12px; color: var(--cinza-claro); font-style: italic; }
+    .hidden { display: none; }
+
+    /* SUBMIT */
+    .submit-wrap { margin-top: 36px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+    .btn-submit { width: 100%; max-width: 400px; padding: 16px; background: var(--laranja); color: white; border: none; border-radius: 8px; font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 2px; cursor: pointer; transition: all 0.2s; }
+    .btn-submit:hover { background: var(--laranja-suave); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(200,90,0,0.3); }
+    .submit-note { font-size: 12px; color: var(--cinza-claro); text-align: center; }
+
+    /* SUCCESS */
+    .success { display: none; text-align: center; padding: 60px 24px; }
+    .success.show { display: block; }
+    .success-icon { font-size: 52px; margin-bottom: 20px; }
+    .success h2 { font-family: 'Bebas Neue', sans-serif; font-size: 32px; color: var(--preto); letter-spacing: 2px; margin-bottom: 10px; }
+    .success p { color: var(--cinza-claro); font-size: 15px; line-height: 1.6; }
+
+    /* FOOTER */
+    .footer { background: var(--preto); border-top: 3px solid var(--laranja); padding: 16px 24px; text-align: center; }
+    .footer p { font-size: 12px; color: #444; }
+
+    @media (max-width: 400px) {
+      .field-row { grid-template-columns: 1fr; }
+      .options-grid.three { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-inner">
+    <div class="header-tag">Formulário Pré-Consulta</div>
+    <h1>Dr. Gustavo Barreto</h1>
+    <h2>Oftalmologia Veterinária</h2>
+    <p class="header-desc">Preencha antes da consulta — leva menos de 2 minutos e nos ajuda a atender seu pet melhor.</p>
+  </div>
+</div>
+
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="container">
+<div id="formContent">
+
+  <!-- BLOCO 1: Tutor e Paciente -->
+  <div class="section">
+    <div class="section-label"><div class="section-num">01</div><div class="section-title">Tutor e Paciente</div><div class="section-divider"></div></div>
+    <div class="card">
+      <div class="field"><label>Nome do tutor *</label><input type="text" id="nomeTutor" placeholder="Seu nome completo"></div>
+      <div class="field-row">
+        <div class="field"><label>WhatsApp *</label><input type="tel" id="telefone" placeholder="(00) 00000-0000"></div>
+        <div class="field"><label>E-mail</label><input type="email" id="email" placeholder="opcional"></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label>Nome do pet *</label><input type="text" id="nomePet" placeholder="Ex: Rex"></div>
+        <div class="field"><label>Espécie *</label>
+          <select id="especie"><option value="">Selecione</option><option>Cão</option><option>Gato</option><option>Outro</option></select>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label>Raça</label><input type="text" id="raca" placeholder="Ex: Labrador, SRD"></div>
+        <div class="field"><label>Idade</label><input type="text" id="idade" placeholder="Ex: 5 anos"></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label>Sexo</label>
+          <select id="sexo"><option value="">Selecione</option><option>Macho inteiro</option><option>Macho castrado</option><option>Fêmea inteira</option><option>Fêmea castrada</option></select>
+        </div>
+        <div class="field"><label>Peso</label><input type="text" id="peso" placeholder="Ex: 12 kg"></div>
+      </div>
+      <div class="field">
+        <label>Endereço da Consulta Volante *</label>
+        <input type="text" id="enderecoConsulta" placeholder="Rua, número, bairro, cidade">
+      </div>
+      <div class="field">
+        <label>Complemento / Referência</label>
+        <input type="text" id="complemento" placeholder="Ex: Apto 42, portão azul, próximo ao mercado...">
+      </div>
+    </div>
+  </div>
+
+  <!-- DIVISOR: Informações Complementares -->
+  <div class="banner-complementar">
+    <strong>Informações complementares — opcional</strong>
+    <p>Os campos abaixo nos ajudam a preparar melhor a consulta do seu pet. Preencha o que souber — não é obrigatório.</p>
+  </div>
+
+  <!-- BLOCO 2: Queixa Principal -->
+  <div class="section">
+    <div class="section-label"><div class="section-num">02</div><div class="section-title">Queixa Principal</div><div class="section-divider"></div></div>
+    <div class="card">
+      <div class="field"><label>O que você notou nos olhos do seu pet?</label><textarea id="queixa" placeholder="Ex: Olho com secreção amarelada há 3 dias, olho fechado, vermelhidão..."></textarea></div>
+      <div class="field"><label>Há quanto tempo notou esse problema?</label>
+        <select id="tempoProblema"><option value="">Selecione</option><option>Menos de 24 horas</option><option>2 a 7 dias</option><option>1 a 4 semanas</option><option>1 a 6 meses</option><option>Mais de 6 meses</option><option>Desde filhote</option></select>
+      </div>
+      <div class="field"><label>Qual olho está afetado?</label>
+        <div class="options-grid three">
+          <div class="option-item"><input type="radio" name="olho" id="olhoD" value="Direito"><label for="olhoD">Direito</label></div>
+          <div class="option-item"><input type="radio" name="olho" id="olhoE" value="Esquerdo"><label for="olhoE">Esquerdo</label></div>
+          <div class="option-item"><input type="radio" name="olho" id="olhoA" value="Ambos"><label for="olhoA">Ambos</label></div>
+        </div>
+      </div>
+      <div class="field"><label>O problema evoluiu desde que você notou?</label>
+        <div class="options-grid three">
+          <div class="option-item"><input type="radio" name="piora" id="piorou" value="Piorou"><label for="piorou">Piorou</label></div>
+          <div class="option-item"><input type="radio" name="piora" id="igual" value="Igual"><label for="igual">Igual</label></div>
+          <div class="option-item"><input type="radio" name="piora" id="melhorou" value="Melhorou"><label for="melhorou">Melhorou</label></div>
+        </div>
+      </div>
+      <div class="field"><label>Nível de desconforto do pet (1 = tranquilo · 5 = muito incomodado)</label>
+        <div class="scale-wrap">
+          <button class="scale-btn" type="button" onclick="selectScale(1)">1</button>
+          <button class="scale-btn" type="button" onclick="selectScale(2)">2</button>
+          <button class="scale-btn" type="button" onclick="selectScale(3)">3</button>
+          <button class="scale-btn" type="button" onclick="selectScale(4)">4</button>
+          <button class="scale-btn" type="button" onclick="selectScale(5)">5</button>
+        </div>
+        <div class="scale-labels"><span>Tranquilo</span><span>Muito incomodado</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOCO 3: Sinais Observados -->
+  <div class="section">
+    <div class="section-label"><div class="section-num">03</div><div class="section-title">Sinais Observados</div><div class="section-divider"></div></div>
+    <div class="card">
+      <div class="field"><label>Marque todos os sinais que percebeu</label>
+        <div class="options-grid">
+          <div class="option-item"><input type="checkbox" id="s1" value="Secreção ocular"><label for="s1">Secreção ocular</label></div>
+          <div class="option-item"><input type="checkbox" id="s2" value="Olho vermelho"><label for="s2">Olho vermelho</label></div>
+          <div class="option-item"><input type="checkbox" id="s3" value="Olho fechado"><label for="s3">Olho fechado</label></div>
+          <div class="option-item"><input type="checkbox" id="s4" value="Esfregando o olho"><label for="s4">Esfregando o olho</label></div>
+          <div class="option-item"><input type="checkbox" id="s5" value="Mancha branca na córnea"><label for="s5">Mancha branca</label></div>
+          <div class="option-item"><input type="checkbox" id="s6" value="Pupila diferente"><label for="s6">Pupila diferente</label></div>
+          <div class="option-item"><input type="checkbox" id="s7" value="Lacrimejamento excessivo"><label for="s7">Lacrimejamento</label></div>
+          <div class="option-item"><input type="checkbox" id="s8" value="Olho saltado"><label for="s8">Olho saltado</label></div>
+          <div class="option-item"><input type="checkbox" id="s9" value="Dificuldade de visão"><label for="s9">Dificuldade visual</label></div>
+          <div class="option-item"><input type="checkbox" id="s10" value="Evita a luz"><label for="s10">Evita a luz</label></div>
+        </div>
+      </div>
+      <div class="field"><label>Outros sinais não listados</label><input type="text" id="outrosSinais" placeholder="Descreva aqui se houver"></div>
+    </div>
+  </div>
+
+  <!-- BLOCO 4: Histórico Cirúrgico -->
+  <div class="section">
+    <div class="section-label"><div class="section-num">04</div><div class="section-title">Histórico Cirúrgico Ocular</div><div class="section-divider"></div></div>
+    <div class="card">
+      <div class="field"><label>Seu pet já fez alguma cirurgia ocular?</label>
+        <div class="options-grid">
+          <div class="option-item"><input type="radio" name="cirurgia" id="cirNao" value="Não" onclick="toggle('detalheCirurgia', false)"><label for="cirNao">Não</label></div>
+          <div class="option-item"><input type="radio" name="cirurgia" id="cirSim" value="Sim" onclick="toggle('detalheCirurgia', true)"><label for="cirSim">Sim</label></div>
+        </div>
+      </div>
+      <div class="field hidden" id="detalheCirurgia">
+        <label>Qual cirurgia? Quando foi realizada?</label>
+        <textarea id="cirurgiaDetalhe" placeholder="Ex: Facoemulsificação (catarata) — olho direito, há 2 anos..."></textarea>
+      </div>
+      <div class="field"><label>Já foi atendido por oftalmologista veterinário antes?</label>
+        <div class="options-grid">
+          <div class="option-item"><input type="radio" name="oftAnterior" id="oftNao" value="Não, primeira vez"><label for="oftNao">Não, primeira vez</label></div>
+          <div class="option-item"><input type="radio" name="oftAnterior" id="oftSim" value="Sim"><label for="oftSim">Sim, já fui antes</label></div>
+        </div>
+      </div>
+      <div class="field"><label>Trouxe exames ou laudos anteriores?</label>
+        <div class="options-grid">
+          <div class="option-item"><input type="radio" name="exames" id="exNao" value="Não"><label for="exNao">Não</label></div>
+          <div class="option-item"><input type="radio" name="exames" id="exSim" value="Sim, trouxe"><label for="exSim">Sim, trouxe</label></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOCO 5: Saúde Geral -->
+  <div class="section">
+    <div class="section-label"><div class="section-num">05</div><div class="section-title">Saúde Geral do Pet</div><div class="section-divider"></div></div>
+    <div class="card">
+      <div class="field"><label>Doenças diagnosticadas (marque todas que se aplicam)</label>
+        <div class="options-grid">
+          <div class="option-item"><input type="checkbox" id="d1" value="Diabetes mellitus"><label for="d1">Diabetes</label></div>
+          <div class="option-item"><input type="checkbox" id="d2" value="Hipotireoidismo"><label for="d2">Hipotireoidismo</label></div>
+          <div class="option-item"><input type="checkbox" id="d3" value="Hipertensão arterial"><label for="d3">Hipertensão</label></div>
+          <div class="option-item"><input type="checkbox" id="d4" value="Doença renal crônica"><label for="d4">Doença renal</label></div>
+          <div class="option-item"><input type="checkbox" id="d5" value="Cushing"><label for="d5">Cushing</label></div>
+          <div class="option-item"><input type="checkbox" id="d6" value="Doença cardíaca"><label for="d6">Doença cardíaca</label></div>
+          <div class="option-item"><input type="checkbox" id="d7" value="Alergia / atopia"><label for="d7">Alergia / atopia</label></div>
+          <div class="option-item"><input type="checkbox" id="d8" value="Epilepsia"><label for="d8">Epilepsia</label></div>
+          <div class="option-item"><input type="checkbox" id="d9" value="Neoplasia"><label for="d9">Neoplasia</label></div>
+          <div class="option-item"><input type="checkbox" id="d10" value="Nenhuma conhecida"><label for="d10">Nenhuma conhecida</label></div>
+        </div>
+      </div>
+      <div class="field"><label>Outras doenças não listadas</label><input type="text" id="outraDoenca" placeholder="Ex: leishmaniose, FIV, PIF..."></div>
+      <div class="field"><label>Seu pet usa algum medicamento atualmente?</label>
+        <div class="options-grid">
+          <div class="option-item"><input type="radio" name="medicacao" id="medNao" value="Não" onclick="toggle('detalheMed', false)"><label for="medNao">Não</label></div>
+          <div class="option-item"><input type="radio" name="medicacao" id="medSim" value="Sim" onclick="toggle('detalheMed', true)"><label for="medSim">Sim</label></div>
+        </div>
+      </div>
+      <div class="field hidden" id="detalheMed">
+        <label>Quais medicamentos? (nome, dose e frequência)</label>
+        <textarea id="medicamentoDetalhe" placeholder="Ex: Colírio de tobramicina 2x ao dia, fenobarbital 30mg 2x ao dia..."></textarea>
+        <span class="hint">Inclua colírios, comprimidos, injeções e suplementos</span>
+      </div>
+      <div class="field"><label>Vacinas em dia?</label>
+        <div class="options-grid three">
+          <div class="option-item"><input type="radio" name="vacina" id="vacSim" value="Sim"><label for="vacSim">Sim</label></div>
+          <div class="option-item"><input type="radio" name="vacina" id="vacNao" value="Não"><label for="vacNao">Não</label></div>
+          <div class="option-item"><input type="radio" name="vacina" id="vacNaoSei" value="Não sei"><label for="vacNaoSei">Não sei</label></div>
+        </div>
+      </div>
+      <div class="field"><label>Pet tem acompanhamento clínico regular?</label>
+        <div class="options-grid">
+          <div class="option-item"><input type="radio" name="acomp" id="acomSim" value="Sim"><label for="acomSim">Sim</label></div>
           <div class="option-item"><input type="radio" name="acomp" id="acomNao" value="Não"><label for="acomNao">Não</label></div>
         </div>
       </div>
